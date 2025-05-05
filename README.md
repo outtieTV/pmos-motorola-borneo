@@ -172,7 +172,12 @@ postmarketos-base
 $ pmbootstrap install --android-recovery-zip<br />
 $ pmbootstrap export<br />
 $ cp -rL /tmp/postmarketOS-export /mnt/d/pmos #or whichever folder you want<br />
-13. Use adb tools to install the android recovery zip.<br />
-14. I asked chatgpt to patch the android recovery zip for support with a/b partitioned devices as android-recovery-zip fails to find boot_a and boot_b without custom patches due to a fault with fstab.<br />
+13. I asked chatgpt to patch the android recovery zip for support with a/b partitioned devices as android-recovery-zip fails to find boot_a and boot_b without custom patches due to a fault with fstab.<br />
 issue here: https://gitlab.postmarketos.org/postmarketOS/postmarketos-android-recovery-installer/-/issues/13<br />
-and here: https://gitlab.postmarketos.org/postmarketOS/postmarketos-android-recovery-installer/-/issues/16
+and here: https://gitlab.postmarketos.org/postmarketOS/postmarketos-android-recovery-installer/-/issues/16<br />
+Patch here: https://xdaforums.com/t/my-partially-successful-attempt-at-porting-postmarket-os-to-the-moto-g-power-2021.4715218/post-89932018
+14. Use adb tools to install the android recovery zip.<br />
+https://developer.android.com/tools/releases/platform-tools<br />
+15. Install postmarket os on your motorola borneo using power button and volume keys to navigate the adb/fastboot menu!<br />
+<br />
+Congratulations, you are now finished.
