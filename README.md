@@ -5,15 +5,15 @@ PostMarketOS on the Motorola Borneo<br />
 Installation instructions:<br />
 1. Install Ubuntu in a Virtual Machine or Natively. Do not use Ubuntu WSL
 2. Open the terminal and grant sudo priveleges to your user.
-3. Upgrade your operating system and install some new packages.
+3. Upgrade your operating system and install some new packages.<br />
 $ sudo apt update && sudo apt upgrade -y && sudo apt install -y python-is-python3 kpartx git gh nano
-4. Create a pmbootstrap command.
+4. Create a pmbootstrap command.<br />
 $ sudo nano /usr/local/bin/pmbootstrap
 ```
 #!/bin/bash
 python $HOME/pmbootstrap/pmbootstrap.py "$@"
 ```
-5. Make it executable and run it.
+5. Make it executable and run it.<br />
 $ sudo chmod +x /usr/local/bin/pmbootstrap<br />
 $ pmbootstrap init
 ```
@@ -39,7 +39,7 @@ Device hostname: motorola-borneo
 Build outdated packages: no
 pass: 147147
 ```
-6. Get checksums.
+6. Get checksums.<br />
 $ pmbootstrap checksum device-motorola-borneo<br />
 $ pmbootstrap shutdown<br />
 $ pmbootstrap checksum linux-motorola-borneo<br />
@@ -50,8 +50,8 @@ $ pmbootstrap install<br />
 7. cd to linux-motorola-borneo folder and cp APKBUILD to home folder ~
 
 $ cp ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/linux-motorola-borneo/APKBUILD ~/APKBUILD.bak
-$ cp ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/linux-motorola-borneo/APKBUILD ~/APKBUILD
-8. Edit apkbuild file
+$ cp ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/linux-motorola-borneo/APKBUILD ~/APKBUILD<br />
+8. Edit apkbuild file<br />
 $ nano ~/APKBUILD
 ```
 # Reference: <https://postmarketos.org/vendorkernel>
@@ -127,17 +127,17 @@ package() {
 
 sha512sums="(run 'pmbootstrap checksum linux-motorola-borneo' to fill)"
 ```
-9. Copy apkbuild file.
+9. Copy apkbuild file.<br />
 $ sudo cp APKBUILD ~/.local/var/pmbootstrap/chroot_native/home/pmos/build/APKBUILD<br />
 $ sudo cp APKBUILD ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/linux-motorola-borneo/APKBUILD
-10. Remove patch files.
-$ cd ~/.local/var/pmbootstrap/chroot_native/mnt/pmaports/device/testing/linux-motorola-borneo
-# or cd ~/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/git/pmaports/device/testing/linux-motorola-borneo
-$ rm gcc7-give-up-on-ilog2-const-optimizations.patch
-$ rm gcc8-fix-put-user.patch
-$ rm gcc10-extern_YYLOC_global_declaration.patch
-$ rm kernel-use-the-gnu89-standard-explicitly.patch
-11. Create patch file.
+10. Remove patch files.<br />
+$ cd ~/.local/var/pmbootstrap/chroot_native/mnt/pmaports/device/testing/linux-motorola-borneo<br />
+#or cd ~/.local/var/pmbootstrap/chroot_native/mnt/pmbootstrap/git/pmaports/device/testing/linux-motorola-borneo<br />
+$ rm gcc7-give-up-on-ilog2-const-optimizations.patch<br />
+$ rm gcc8-fix-put-user.patch<br />
+$ rm gcc10-extern_YYLOC_global_declaration.patch<br />
+$ rm kernel-use-the-gnu89-standard-explicitly.patch<br />
+11. Create patch file.<br />
 $ nano baseMakefile.patch
 ```
 --- a/Makefile
@@ -152,8 +152,8 @@ $ nano baseMakefile.patch
  CLANG_FLAGS    += -Werror=unknown-warning-option
  CLANG_FLAGS    += $(call cc-option, -Wno-unsequenced)
 ```
-#optional patch for baseMakefile.patch
-$ sed -i 's/^    /\t/' baseMakefile.patch #replace 4 spaces with \t
+#optional patch for baseMakefile.patch<br />
+$ sed -i 's/^    /\t/' baseMakefile.patch #replace 4 spaces with \t<br />
 12. Get ready for installation:
 $ pmbootstrap kconfig edit linux-motorola-borneo
 $ pmbootstrap build device-motorola-borneo
