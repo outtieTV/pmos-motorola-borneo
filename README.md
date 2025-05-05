@@ -154,11 +154,11 @@ $ nano baseMakefile.patch
 ```
 #optional patch for baseMakefile.patch<br />
 $ sed -i 's/^    /\t/' baseMakefile.patch #replace 4 spaces with \t<br />
-12. Get ready for installation:
-$ pmbootstrap kconfig edit linux-motorola-borneo
-$ pmbootstrap build device-motorola-borneo
-$ pmbootstrap build linux-motorola-borneo --arch=aarch64
-$ cd ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/device-motorola-borneo
+12. Get ready for installation:<br />
+$ pmbootstrap kconfig edit linux-motorola-borneo<br />
+$ pmbootstrap build device-motorola-borneo<br />
+$ pmbootstrap build linux-motorola-borneo --arch=aarch64<br />
+$ cd ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/device-motorola-borneo<br />
 $ nano APKBUILD
 ```
 depends="
@@ -167,6 +167,6 @@ mkbootimg
 postmarketos-base
 "
 ```
-$ pmbootstrap install --android-recovery-zip
-$ pmbootstrap export
-$ cp -rL /tmp/postmarketOS-export /mnt/d/pmos
+$ pmbootstrap install --android-recovery-zip<br />
+$ pmbootstrap export<br />
+$ cp -rL /tmp/postmarketOS-export /mnt/d/pmos #or whichever folder you want<br />
