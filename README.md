@@ -1,5 +1,6 @@
 # pmos-motorola-borneo
 PostMarketOS on the Motorola Borneo<br />
+Status: installs but does not boot.<br />
 <br />
 <br />
 Installation instructions:<br />
