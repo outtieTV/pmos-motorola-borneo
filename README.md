@@ -7,8 +7,9 @@ Installation instructions:<br />
 1. Install Ubuntu in a Virtual Machine or Natively. Do not use Ubuntu WSL
 2. Open the terminal and grant sudo priveleges to your user.
 3. Upgrade your operating system and install some new packages.<br />
-$ sudo apt update && sudo apt upgrade -y && sudo apt install -y python-is-python3 kpartx git gh nano
-4. Create a pmbootstrap command.<br />
+$ sudo apt update && sudo apt upgrade -y && sudo apt install -y python-is-python3 kpartx git gh nano<br />
+$ cd ~ && git clone https://gitlab.postmarketos.org/postmarketOS/pmbootstrap.git
+5. Create a pmbootstrap command.<br />
 $ sudo nano /usr/local/bin/pmbootstrap
 ```
 #!/bin/bash
