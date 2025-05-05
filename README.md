@@ -155,6 +155,7 @@ $ nano baseMakefile.patch
 ```
 #optional patch for baseMakefile.patch<br />
 ```$ sed -i 's/^    /\t/' baseMakefile.patch #replace 4 spaces with \t```<br />
+<br />
 12. Get ready for installation:<br />
 $ pmbootstrap kconfig edit linux-motorola-borneo<br />
 $ pmbootstrap build device-motorola-borneo<br />
